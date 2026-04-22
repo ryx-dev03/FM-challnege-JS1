@@ -24,6 +24,7 @@
   --padding-5: 1rem 2rem;
   --padding-6: 0.18rem;
   --padding-7: 0.9rem 1.9rem 0.5rem 1.9rem;
+  --padding-8: 1rem 4rem 1rem 0.5rem;
   /* --padding-7: 0.9rem 1.9rem 0.5rem 1.9rem; */
 
   /* BOX SHADOW */
@@ -53,16 +54,28 @@
 body {
   background-color: var(--primary-color-4);
   line-height: 1.6;
+   padding: var(--padding-8);
+  padding: rem;
 }
+
+
+.attribution {
+     font-size: 11px;
+     text-align: center;
+   }
+
+   .attribution a {
+     color: hsl(228, 45%, 44%);
+   } 
+
 
 .main-container {
   max-width: 23.4rem;
   margin: 0 auto;
-  /* padding: calc(var(--padding) * 10); */
+  
+  /* /* padding: var(--papadding: 2rem; */
 
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
+  
 }
 
 .card-container {
@@ -76,6 +89,7 @@ body {
 
   margin: 2rem;
   overflow: visible;
+  width: 100%;
 }
 
 .interior-img {
@@ -107,20 +121,18 @@ p {
 }
 
 .profile-content {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
   /* justify-content: flex-start; */
   padding: var(--padding-7);
   gap: 1rem;
 
   margin: 0 0 1rem 0;
-  /* position: relative; */
+  /* position: relative; */ 
+  /* width: 100%; */
 }
 
-/* .profile-content.share-open .name-date,
-.profile-content.share-open .share-icon {
-  display: none;
-} */
+
 
 .profile-img {
   max-width: 2.6rem;
@@ -129,7 +141,6 @@ p {
   cursor: pointer;
 }
 
-/*   */
 
 .name-date {
   display: flex;
@@ -172,39 +183,37 @@ p {
 }
 
 .share {
-  /* align-items: flex-start; */
+  align-items: center;
 
   gap: 0.6rem;
 
   background-color: var(--primary-color-1);
   padding: var(--padding-5);
-  width: 100%;
+
  
   border-radius: var(--border-radius-1);
-  /* display: none; */
-   position: sticky;
-  /* width: 200%; */
+  
+   position: static;
+
  
    
   /* inset: 0; */
   display: flex;
   /* object-fit: cover; */
-  flex-grow: 1;
-  margin: 0;
-  width: 100vw;
-  /* height: 100VH; */
+
+
+  width: 100%;
+
  
 }
 
-.share-icon {
+.share {
   display: none;
 }
 
-.profile-content.share.open .profile-img, 
-.profile-content.share.open .name-date,
-.profile-content.share.open .share-icon{
+/* .share-icon {
   display: none;
-}
+} */
 
 
 
@@ -249,8 +258,9 @@ p {
   margin-left: auto;
   background-color: var(--background-color-2);
   border-radius: var(--border-radius-3);
-  padding: var(--padding-6);
+  padding: var(--padding-2);
   cursor: pointer;
+  font-size: var(--font-size-5);
   /* display: none; */
 }
 
@@ -265,6 +275,21 @@ p {
 .share-icon:hover {
   background-color: var(--primary-color-2);
   color: var(--primary-color-4);
+}
+
+
+
+@media screen and (max-width: 48rem ) {
+  
+.profile-wrapper.share-align .share{
+  display: flex;
+} 
+
+.profile-wrapper.share-align .profile-content{
+  display: none;
+} 
+
+
 }
 
 @media screen and (min-width: 64rem) {
@@ -346,7 +371,11 @@ p {
     padding: var(--padding-4);
 
     margin: 0 0 1rem 0;
-    position: relative;
+   
+  }
+
+  .profile-wrapper {
+     position: relative;
   }
 
   .paragraph {
@@ -366,8 +395,8 @@ p {
 
     background-color: var(--primary-color-1);
     padding: var(--padding-5);
-    width: 100%;
-    display: none;
+    width: max-content;
+    /* display: none; */
 
     border-radius: var(--border-radius-2);
 
@@ -434,7 +463,7 @@ p {
     transition: all 0.2s ease-in;
     z-index: 2;
     position: relative;
-    display: block;
+
   }
 
   .share-icons {
@@ -477,6 +506,19 @@ p {
   .card-container {
     overflow: visible;
   }
+
+  .profile-content{
+    display: flex;
+  }
+
+  .profile-wrapper.share-align .share{
+  display: none;
+} 
+
+.profile-wrapper.share-align .profile-content{
+  display: flex;
+ 
+} 
 
 
 }
